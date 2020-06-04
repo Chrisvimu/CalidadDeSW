@@ -11,5 +11,6 @@ Software requirements:
     MySQL database
     Xampp 7.4.6
     Netbeans 8.2
+    Mockito version to be decided.
 
 
