@@ -149,6 +149,7 @@ public class ProductoDAO {
             ps.setInt(4, p.getStock());
             r = ps.executeUpdate();
         } catch (Exception e) {
+            
         }
         return r;
         
