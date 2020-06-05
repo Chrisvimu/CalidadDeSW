@@ -17,11 +17,6 @@ public class Conexion {
     String url = "jdbc:mysql://localhost:3306/bdcarritocompras";
     String user = "root";
     String pass = "";
-
-    /**
-     *
-     * @return
-     */
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");

@@ -20,27 +20,48 @@ import static org.junit.Assert.*;
  */
 public class ProductoDAOTest {
     
+    /**
+     *
+     */
     public ProductoDAOTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
+    
+    
     //Las siguientes pruebas seran del modulo agregar, de la clase ProductoDAO.
 
     //Test Agregar01, agregar Producto.
+
+    /**
+     *
+     */
     @Test
     public void testAgregar() {
         System.out.println("agregar");
@@ -61,6 +82,10 @@ public class ProductoDAOTest {
     //Las siguientes pruebas seran del modulo buscar, de la clase ProductoDAO.
     
     //Test Buscar01, Nombre.
+
+    /**
+     *
+     */
     @Test
     public void testBuscar01() {
         System.out.println("buscar nombre");
@@ -72,6 +97,10 @@ public class ProductoDAOTest {
     }
 
     //Test Buscar02, Descripcion.
+
+    /**
+     *
+     */
     @Test
     public void testBuscar02() {
         System.out.println("buscar descripcion");
@@ -83,6 +112,10 @@ public class ProductoDAOTest {
     }
     
     //Test Buscar03, Precio.
+
+    /**
+     *
+     */
     @Test
     public void testBuscar03() {
         System.out.println("buscar precio");
@@ -93,6 +126,10 @@ public class ProductoDAOTest {
         assertEquals(expResult, result);
     }
     //Test Buscar04, Stock.
+
+    /**
+     *
+     */
     @Test
     public void testBuscar04() {
             System.out.println("buscar stock");

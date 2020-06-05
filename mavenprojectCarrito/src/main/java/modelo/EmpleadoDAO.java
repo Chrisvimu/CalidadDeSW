@@ -7,10 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author root
- */
 public class EmpleadoDAO {
 
     Conexion cn = new Conexion();
@@ -19,12 +15,6 @@ public class EmpleadoDAO {
     ResultSet rs;
     int r;
 
-    /**
-     *
-     * @param user
-     * @param Rut
-     * @return
-     */
     public Empleado validar(String user, String Rut) {
         Empleado em = new Empleado();
         String sql = "select * from empleado where User=? and Rut=?";
@@ -46,11 +36,6 @@ public class EmpleadoDAO {
     }
     
     //Operaciones CRUD
-
-    /**
-     *
-     * @return
-     */
     
     public List listar(){
         String sql="select * from empleado";
@@ -73,12 +58,6 @@ public class EmpleadoDAO {
         }
         return lista;
     }
-
-    /**
-     *
-     * @param em
-     * @return
-     */
     public int agregar(Empleado em){ 
         String sql="insert into empleado(Rut, Nombres, Telefono,Estado,User)values(?,?,?,?,?)";
         try {
@@ -95,12 +74,6 @@ public class EmpleadoDAO {
         return r;
         
     }
-
-    /**
-     *
-     * @param id
-     * @return
-     */
     public Empleado listarId(int id){
         Empleado emp=new Empleado();
         String sql="select * from empleado where IdEmpleado="+id;
@@ -119,12 +92,6 @@ public class EmpleadoDAO {
         }
         return emp;
     }
-
-    /**
-     *
-     * @param em
-     * @return
-     */
     public int actualizar(Empleado em){
         String sql="update empleado set Rut=?, Nombres=?, Telefono=?,Estado=?,User=? where IdEmpleado=?";
         try {
@@ -141,11 +108,6 @@ public class EmpleadoDAO {
         }
         return r;
     }
-
-    /**
-     *
-     * @param id
-     */
     public void delete(int id){
         String sql="delete from empleado where IdEmpleado="+id;
         try {

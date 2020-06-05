@@ -28,11 +28,7 @@ public class ProductoDAO {
     ResultSet rs;
     int r;
     
-    /**
-     *
-     * @param id
-     * @return
-     */
+    
     public Producto buscar(int id) {
         Producto p = new Producto();
         String sql = "select * from producto where idProducto=" + id;
@@ -55,12 +51,6 @@ public class ProductoDAO {
         return p;
     }
     
-    /**
-     *
-     * @param id
-     * @param stock
-     * @return
-     */
     public int actualizarStock(int id, int stock) {
         String sql = "update producto set stock =? where idProducto = ?";
         try {
@@ -75,11 +65,6 @@ public class ProductoDAO {
         return r;
     }
     
-    /**
-     *
-     * @param id
-     * @return
-     */
     public Producto listarId(int id){
         String sql = "select * from producto where idProducto = " + id;
         Producto p = new Producto();
@@ -103,10 +88,6 @@ public class ProductoDAO {
         return p;
     }
     
-    /**
-     *
-     * @return
-     */
     public List listar() {
         List<Producto>productos = new ArrayList<>();
         String sql = "select * from producto";
@@ -131,11 +112,6 @@ public class ProductoDAO {
         return productos;
     }
     
-    /**
-     *
-     * @param id
-     * @param response
-     */
     public void listarImg(int id, HttpServletResponse response) {
         String sql = "select * from producto where idProducto = " + id;
         InputStream inputStream = null;
@@ -162,11 +138,6 @@ public class ProductoDAO {
         
     }
     
-    /**
-     *
-     * @param p
-     * @return
-     */
     public int agregar(Producto p){ 
         String sql="insert into producto(Nombres, Descripcion, Precio, Stock)values(?,?,?,?)";
         try {
@@ -184,11 +155,6 @@ public class ProductoDAO {
         
     }
     
-    /**
-     *
-     * @param p
-     * @return
-     */
     public int actualizar(Producto p){
         String sql="update producto set Nombres=?, Descripcion=?, Precio=?, Stock=? where idProducto=?";
         try {
@@ -205,11 +171,6 @@ public class ProductoDAO {
         }
         return r;
     }
-
-    /**
-     *
-     * @param id
-     */
     public void delete(int id){
         String sql="delete from producto where IdProducto="+id;
         try {

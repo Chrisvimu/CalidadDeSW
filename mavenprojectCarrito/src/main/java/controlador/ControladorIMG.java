@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controlador;
 
 import java.io.IOException;
@@ -6,29 +11,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Empleado;
-import modelo.EmpleadoDAO;
+import modelo.ProductoDAO;
 
 /**
  *
- * @author root
+ * @author docencia
  */
-public class Validar extends HttpServlet {
+public class ControladorIMG extends HttpServlet {
 
+    ProductoDAO pdao = new  ProductoDAO();
     
-    EmpleadoDAO edao = new EmpleadoDAO();
-    Empleado em = new Empleado();
-    
-    /**
-     *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+       int id = Integer.parseInt(request.getParameter("id"));
+       
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -43,7 +40,9 @@ public class Validar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int id = Integer.parseInt(request.getParameter("id"));
+        pdao.listarImg(id, response);
+   
     }
 
     /**
@@ -57,21 +56,7 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String accion = request.getParameter("accion");
-        if(accion.equalsIgnoreCase("Ingresar")){
-            String user = request.getParameter("txtuser");
-            String pass = request.getParameter("txtpass");
-            em = edao.validar(user,pass);
-            if(em.getUser()!= null){
-                request.getRequestDispatcher("Controlador?accion=Principal&user="+em.getUser()).forward(request, response);             
-            } else {
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-                
-            }
-        } else {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-                
-        }
+        processRequest(request, response);
     }
 
     /**

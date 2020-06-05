@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controlador;
 
 import java.io.IOException;
@@ -6,28 +11,31 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Empleado;
-import modelo.EmpleadoDAO;
 
 /**
  *
- * @author root
+ * @author docencia
  */
-public class Validar extends HttpServlet {
+public class ControladorEmpleado extends HttpServlet {
 
-    
-    EmpleadoDAO edao = new EmpleadoDAO();
-    Empleado em = new Empleado();
-    
     /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String accion = request.getParameter("accion");
+        switch(accion){
+            case "Principal":
+                request.getRequestDispatcher("Principal.jsp").forward(request, response);
+                break;
+                
+        }
         
     }
 
@@ -57,21 +65,7 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String accion = request.getParameter("accion");
-        if(accion.equalsIgnoreCase("Ingresar")){
-            String user = request.getParameter("txtuser");
-            String pass = request.getParameter("txtpass");
-            em = edao.validar(user,pass);
-            if(em.getUser()!= null){
-                request.getRequestDispatcher("Controlador?accion=Principal&user="+em.getUser()).forward(request, response);             
-            } else {
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-                
-            }
-        } else {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-                
-        }
+        processRequest(request, response);
     }
 
     /**
