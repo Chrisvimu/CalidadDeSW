@@ -44,7 +44,13 @@ public class Controlador extends HttpServlet {
     Empleado em = new Empleado();
     EmpleadoDAO edao = new EmpleadoDAO();
     
-
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");

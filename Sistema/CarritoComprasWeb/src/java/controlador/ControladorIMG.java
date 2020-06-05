@@ -21,6 +21,13 @@ public class ControladorIMG extends HttpServlet {
 
     ProductoDAO pdao = new  ProductoDAO();
     
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        int id = Integer.parseInt(request.getParameter("id"));

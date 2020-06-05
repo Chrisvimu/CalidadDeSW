@@ -9,12 +9,23 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.Empleado;
 import modelo.EmpleadoDAO;
 
+/**
+ *
+ * @author root
+ */
 public class Validar extends HttpServlet {
 
     
     EmpleadoDAO edao = new EmpleadoDAO();
     Empleado em = new Empleado();
     
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
