@@ -155,4 +155,16 @@ public class ProductoDAOTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     
+     * Algunos test's que no estan en la entrega, la idea es desarrollar random
+     
+     */
+    
+    public void test() {
+        System.out.println("Listar ID");
+        ProductoDAO instance = new ProductoDAO();
+        
+    }
+    
 }
