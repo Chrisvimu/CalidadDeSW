@@ -14,3 +14,5 @@ Software and technology used:
     Mockito 2.2.
 
     Maven 3.6.3.
+    Selenium IDE 3.17.0
+
